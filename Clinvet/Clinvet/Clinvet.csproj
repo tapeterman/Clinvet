@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -200,7 +206,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgendamentoConsultaController.cs" />
+    <Compile Include="Controllers\AnamneseController.cs" />
+    <Compile Include="Controllers\AnimalController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ContasAPagarController.cs" />
+    <Compile Include="Controllers\FichaAnimalController.cs" />
+    <Compile Include="Controllers\FormaDePagamentoController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
+    <Compile Include="Controllers\FornecedorProdutoServicoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProdutoServicoAgendamentoConsultaController.cs" />
+    <Compile Include="Controllers\ProdutoServicoController.cs" />
+    <Compile Include="Controllers\TipoController.cs" />
+    <Compile Include="Controllers\TipoDeContaController.cs" />
+    <Compile Include="Controllers\TiposDeVacinaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VacinaController.cs" />
+    <Compile Include="Controllers\VendaServicoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +242,7 @@
     <Compile Include="Models\ProdutoServico.cs" />
     <Compile Include="Models\ProdutoServicoAgendamentoConsultas.cs" />
     <Compile Include="Models\ProdutoServicoVendaServico.cs" />
+    <Compile Include="Models\SistemaContext.cs" />
     <Compile Include="Models\Tipo.cs" />
     <Compile Include="Models\TipoDeConta.cs" />
     <Compile Include="Models\TiposDeVacina.cs" />
@@ -265,6 +290,96 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Create.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Delete.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Details.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Edit.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Index.cshtml" />
+    <Content Include="Views\Anamnese\Create.cshtml" />
+    <Content Include="Views\Anamnese\Delete.cshtml" />
+    <Content Include="Views\Anamnese\Details.cshtml" />
+    <Content Include="Views\Anamnese\Edit.cshtml" />
+    <Content Include="Views\Anamnese\Index.cshtml" />
+    <Content Include="Views\Animal\Create.cshtml" />
+    <Content Include="Views\Animal\Delete.cshtml" />
+    <Content Include="Views\Animal\Details.cshtml" />
+    <Content Include="Views\Animal\Edit.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\ContasAPagar\Create.cshtml" />
+    <Content Include="Views\ContasAPagar\Delete.cshtml" />
+    <Content Include="Views\ContasAPagar\Details.cshtml" />
+    <Content Include="Views\ContasAPagar\Edit.cshtml" />
+    <Content Include="Views\ContasAPagar\Index.cshtml" />
+    <Content Include="Views\FichaAnimal\Create.cshtml" />
+    <Content Include="Views\FichaAnimal\Delete.cshtml" />
+    <Content Include="Views\FichaAnimal\Details.cshtml" />
+    <Content Include="Views\FichaAnimal\Edit.cshtml" />
+    <Content Include="Views\FichaAnimal\Index.cshtml" />
+    <Content Include="Views\FormaDePagamento\Create.cshtml" />
+    <Content Include="Views\FormaDePagamento\Delete.cshtml" />
+    <Content Include="Views\FormaDePagamento\Details.cshtml" />
+    <Content Include="Views\FormaDePagamento\Edit.cshtml" />
+    <Content Include="Views\FormaDePagamento\Index.cshtml" />
+    <Content Include="Views\Fornecedor\Create.cshtml" />
+    <Content Include="Views\Fornecedor\Delete.cshtml" />
+    <Content Include="Views\Fornecedor\Details.cshtml" />
+    <Content Include="Views\Fornecedor\Edit.cshtml" />
+    <Content Include="Views\Fornecedor\Index.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Create.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Delete.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Details.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Edit.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Index.cshtml" />
+    <Content Include="Views\Funcionario\Create.cshtml" />
+    <Content Include="Views\Funcionario\Delete.cshtml" />
+    <Content Include="Views\Funcionario\Details.cshtml" />
+    <Content Include="Views\Funcionario\Edit.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\ProdutoServico\Create.cshtml" />
+    <Content Include="Views\ProdutoServico\Delete.cshtml" />
+    <Content Include="Views\ProdutoServico\Details.cshtml" />
+    <Content Include="Views\ProdutoServico\Edit.cshtml" />
+    <Content Include="Views\ProdutoServico\Index.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Create.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Delete.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Details.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Edit.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Index.cshtml" />
+    <Content Include="Views\Tipo\Create.cshtml" />
+    <Content Include="Views\Tipo\Delete.cshtml" />
+    <Content Include="Views\Tipo\Details.cshtml" />
+    <Content Include="Views\Tipo\Edit.cshtml" />
+    <Content Include="Views\Tipo\Index.cshtml" />
+    <Content Include="Views\TipoDeConta\Create.cshtml" />
+    <Content Include="Views\TipoDeConta\Delete.cshtml" />
+    <Content Include="Views\TipoDeConta\Details.cshtml" />
+    <Content Include="Views\TipoDeConta\Edit.cshtml" />
+    <Content Include="Views\TipoDeConta\Index.cshtml" />
+    <Content Include="Views\TiposDeVacina\Create.cshtml" />
+    <Content Include="Views\TiposDeVacina\Delete.cshtml" />
+    <Content Include="Views\TiposDeVacina\Details.cshtml" />
+    <Content Include="Views\TiposDeVacina\Edit.cshtml" />
+    <Content Include="Views\TiposDeVacina\Index.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Vacina\Create.cshtml" />
+    <Content Include="Views\Vacina\Delete.cshtml" />
+    <Content Include="Views\Vacina\Details.cshtml" />
+    <Content Include="Views\Vacina\Edit.cshtml" />
+    <Content Include="Views\Vacina\Index.cshtml" />
+    <Content Include="Views\VendaServico\Create.cshtml" />
+    <Content Include="Views\VendaServico\Delete.cshtml" />
+    <Content Include="Views\VendaServico\Details.cshtml" />
+    <Content Include="Views\VendaServico\Edit.cshtml" />
+    <Content Include="Views\VendaServico\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

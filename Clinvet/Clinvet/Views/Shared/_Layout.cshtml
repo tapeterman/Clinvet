@@ -23,8 +23,31 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Início", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
                 </ul>
+
+                <div class="dropdown ">
+                    <button class="btn btn-primary dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Funcionario", "Index", "Funcionario") </button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Agendamento", "Index", "AgendamentoConsulta") </button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Anamnese", "Index", "Anamnese")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Pet", "Index", "Animal")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Clientes", "Index", "Cliente")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Ficha Animal", "Index", "FichaAnimal")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Formas de Pagamento", "Index", "FormaDePagamento")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Fornecedor", "Index", "Fornecedor")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Funcionario", "Index", "Funcionario")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Produtos", "Index", "ProdutosServico")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Tipo", "Index", "Tipo")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Tipo de Conta", "Index", "TipoDeConta")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("TiposdeVacina", "Index", "TiposdeVacina")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Usuario", "Index", "Usuario")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("Vacina", "Index", "Vacina")</button>
+                        <button class="dropdown-item" type="button">@Html.ActionLink("VendaServico", "Index", "VendaServico")</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

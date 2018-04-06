@@ -1,0 +1,50 @@
+﻿@model Clinvet.Models.ContasAPagar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContasAPagar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFornecedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFornecedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoDeConta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoDeConta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

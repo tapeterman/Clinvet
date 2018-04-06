@@ -1,0 +1,58 @@
+﻿@model Clinvet.Models.Anamnese
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Anamnese</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Diagnostico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diagnostico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anamnese1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anamnese1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Medicamentos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medicamentos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcedimentosRealizados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcedimentosRealizados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFichaAnimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFichaAnimal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
