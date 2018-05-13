@@ -1,42 +1,40 @@
-﻿using System;
+﻿
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using System.Data.Entity;
+
+
 
 namespace Clinvet.Models
 {
-    public partial class ClinvetContext : DbContext
-    {
-        public virtual DbSet<AgendamentoConsulta> AgendamentoConsulta { get; set; }
-        public virtual DbSet<Anamnese> Anamnese { get; set; }
-        public virtual DbSet<Animal> Animal { get; set; }
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<ContasAPagar> ContasAPagar { get; set; }
-        public virtual DbSet<FichaAnimal> FichaAnimal { get; set; }
-        public virtual DbSet<FormaDePagamento> FormaDePagamento { get; set; }
-        public virtual DbSet<Fornecedor> Fornecedor { get; set; }
-        public virtual DbSet<FornecedorProdutoServico> FornecedorProdutoServico { get; set; }
-        public virtual DbSet<Funcionario> Funcionario { get; set; }
-        public virtual DbSet<ProdutoServico> ProdutoServico { get; set; }
-        public virtual DbSet<ProdutoServicoAgendamentoConsultas> ProdutoServicoAgendamentoConsultas { get; set; }
-        public virtual DbSet<ProdutoServicoVendaServico> ProdutoServicoVendaServico { get; set; }
-        public virtual DbSet<Tipo> Tipo { get; set; }
-        public virtual DbSet<TipoDeConta> TipoDeConta { get; set; }
-        public virtual DbSet<TiposDeVacina> TiposDeVacina { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
-        public virtual DbSet<Vacina> Vacina { get; set; }
-        public virtual DbSet<VendaServico> VendaServico { get; set; }
-        public virtual DbSet<VendaServicoFormaDePagamento> VendaServicoFormaDePagamento { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(@"Data Source=LAPTOP-NOB1T62L\SQLEXPRESS;Initial Catalog=clinvet;Integrated Security=True");
-            }
+    public class ClinvetContext : System.Data.Entity.DbContext {
+        public ClinvetContext() : base("name=ConnContext") {
         }
+        public System.Data.Entity.DbSet<AgendamentoConsulta> AgendamentoConsulta { get; set; }
+        public System.Data.Entity.DbSet<Anamnese> Anamnese { get; set; }
+        public System.Data.Entity.DbSet<Animal> Animal { get; set; }
+        public System.Data.Entity.DbSet<Cliente> Cliente { get; set; }
+        public System.Data.Entity.DbSet<ContasAPagar> ContasAPagar { get; set; }
+        public System.Data.Entity.DbSet<FichaAnimal> FichaAnimal { get; set; }
+        public System.Data.Entity.DbSet<FormaDePagamento> FormaDePagamento { get; set; }
+        public System.Data.Entity.DbSet<Fornecedor> Fornecedor { get; set; }
+        public System.Data.Entity.DbSet<FornecedorProdutoServico> FornecedorProdutoServico { get; set; }
+        public System.Data.Entity.DbSet<Funcionario> Funcionario { get; set; }
+        public System.Data.Entity.DbSet<ProdutoServico> ProdutoServico { get; set; }
+        public System.Data.Entity.DbSet<ProdutoServicoAgendamentoConsultas> ProdutoServicoAgendamentoConsultas { get; set; }
+        public System.Data.Entity.DbSet<ProdutoServicoVendaServico> ProdutoServicoVendaServico { get; set; }
+        public System.Data.Entity.DbSet<Tipo> Tipo { get; set; }
+        public System.Data.Entity.DbSet<TipoDeConta> TipoDeConta { get; set; }
+        public System.Data.Entity.DbSet<TiposDeVacina> TiposDeVacina { get; set; }
+        public System.Data.Entity.DbSet<Usuario> Usuario { get; set; }
+        public System.Data.Entity.DbSet<Vacina> Vacina { get; set; }
+        public System.Data.Entity.DbSet<VendaServico> VendaServico { get; set; }
+        public System.Data.Entity.DbSet<VendaServicoFormaDePagamento> VendaServicoFormaDePagamento { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        
+
+        public void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<AgendamentoConsulta>(entity =>
             {
                 entity.ToTable("agendamento_consulta");
@@ -426,7 +424,7 @@ namespace Clinvet.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IdUsuario)
+                entity.Property(e => e.login)
                     .IsRequired()
                     .HasColumnName("id_usuario")
                     .HasMaxLength(50)
@@ -474,9 +472,9 @@ namespace Clinvet.Models
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                entity.HasOne(d => d.login)
                     .WithMany(p => p.Funcionario)
-                    .HasForeignKey(d => d.IdUsuario)
+                    .HasForeignKey(d => d.login)
                     .HasConstraintName("funcionario_fk_1");
             });
 
