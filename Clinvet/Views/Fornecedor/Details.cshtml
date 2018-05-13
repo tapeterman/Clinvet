@@ -1,0 +1,84 @@
+﻿@model Clinvet.Models.Fornecedor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    <i class="zmdi zmdi-assignment-check"></i> Detalhes do Fornecedor
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Fornecedor")">Fornecedores</a></li>
+                    <li class="breadcrumb-item active">Detalhes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row clearfix">
+            <div class="col-md-8 col-lg-6 col-lg-offset-4">
+                <div class="card ">
+                    <div class="body">
+                        <h6 class="col-purple"><i class="zmdi zmdi-assignment-account"></i> Detalhes do Fornecedor: </h6>
+                        <div class="table-responsive">
+                            <table class="table m-t-20">
+                                <tbody>
+                                    <tr>
+                                        <td><strong class="col-purple">@Html.DisplayNameFor(model => model.NomeFantasia)</strong></td>
+                                        <td><strong class="col-purple">@Html.DisplayFor(model => model.NomeFantasia)</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Cnpj)</td>
+                                        <td>@Html.DisplayFor(model => model.Cnpj)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.RazaoSocial)</td>
+                                        <td>@Html.DisplayFor(model => model.RazaoSocial)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Telefone)</td>
+                                        <td>@Html.DisplayFor(model => model.Telefone)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Rua)</td>
+                                        <td>@Html.DisplayFor(model => model.Rua)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Numero)</td>
+                                        <td>@Html.DisplayFor(model => model.Numero)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Bairro)</td>
+                                        <td>@Html.DisplayFor(model => model.Bairro)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Cidade)</td>
+                                        <td>@Html.DisplayFor(model => model.Cidade)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Cep)</td>
+                                        <td>@Html.DisplayFor(model => model.Cep)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="@Url.Action("Index", "Fornecedor")" class="btn btn-block btn-raised btn-primary btn-default btn-round waves-effect" role="button">Voltar</a></td>
+                                        <td><a href="@Url.Action("Edit", "Fornecedor", new { id = Model.Id })" class="btn btn-block btn-raised btn-primary btn-default btn-round waves-effect" role="button">Editar</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,99 @@
+﻿@model Clinvet.Models.AgendamentoConsulta
+
+@{
+    ViewBag.Title = "Edit";
+}
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <section class="content">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-7">
+                    <h2>
+                        Edição da Agenda
+                    </h2>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 text-right">
+                    <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                        <i class="zmdi zmdi-plus"></i>
+                    </button>
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "AgendamentoConsulta")">Agendamentos</a></li>
+                        <li class="breadcrumb-item active">Edição</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong><i class="zmdi zmdi-face"></i> Editar Agendamento </strong> </h2>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Id)
+                            <ul class="header-dropdown">
+
+                                <li class="remove">
+                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.DataDeAgendamento, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.EditorFor(model => model.DataDeAgendamento, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.DataDeAgendamento, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <textarea id="Descricao" name="Descricao" class="form-control col-md-9" cols="2" rows="2"></textarea>
+                                    @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <select name="Status" class="form-control show-tick col-md-9">
+                                        <option value="Agendado" />Agendado
+                                        <option value="Cancelado" />Cancelado
+                                        <option value="Realizado" />Realizado
+                                    </select>
+                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.IdCliente, "Cliente", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.DropDownList("IdCliente", null, htmlAttributes: new { @class = "form-control dropdown col-md-9" })
+                                    @Html.ValidationMessageFor(model => model.IdCliente, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-sm-12">
+                                <a href="@Url.Action("Index", "AgendamentoConsulta")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Voltar</a>
+                                <button type="submit" value="Save" class="btn btn-raised btn-round btn-primary form">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Clinvet.Models.ContasAPagar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section class="content profile-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    Contas a Pagar
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item active">Contas a Pagar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="card parents-list">
+                    <div class="header">
+                        <h2> Lista de Fornecedores Cadastrados</h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a href="@Url.Action("Create", "ContasAPagar")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Cadastrar Conta</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Fornecedor.NomeFantasia)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Tipo")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Data)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Valor)
+                                    </th>
+                                    <th> Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model) {
+                                    <tr>
+                                        <td>
+                                            <strong class="col-purple">@Html.DisplayFor(modelItem => item.Fornecedor.NomeFantasia)</strong>
+</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoDeConta.Descricao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Data)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Valor)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Apagar", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

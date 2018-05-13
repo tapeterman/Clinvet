@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Clinvet.Models.Vacina>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="content profile-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    Vacinas
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item active">Vacinas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="card parents-list">
+                    <div class="header">
+                        <h2>Formas de Pagamentos</h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a href="@Url.Action("Create", "Vacina")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Cadastrar Nova Vacina</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayName("Pet")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FichaAnimal.PesoPorteAntesDosProcedimentos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TiposDeVacina.Descricao)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Marca)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Lote)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Fornecedor)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Validade)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Custo)
+                                    </th>
+                                    <th>
+                                        Ações
+                                    </th>
+</thead>
+                            <tbody>
+                                @foreach (var item in Model) {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FichaAnimal.Animal.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FichaAnimal.PesoPorteAntesDosProcedimentos)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TiposDeVacina.Descricao)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Marca)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Lote)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fornecedor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Validade)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Custo)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        @Html.ActionLink("Apagar", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

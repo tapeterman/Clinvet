@@ -1,0 +1,90 @@
+﻿@model Clinvet.Models.ContasAPagar
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-7">
+                <h2>
+                    Edição de Contas a Pagar
+                </h2>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 text-right">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "ContasAPagar")">Contas a Pagar</a></li>
+                    <li class="breadcrumb-item active">Edição</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong><i class="zmdi zmdi-face"></i> Edição de Contas A Pagar </strong> </h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    @using (Html.BeginForm()) {
+                        @Html.AntiForgeryToken()
+                        <div class="body">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.IdFornecedor, "Fornecedor", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.DropDownList("IdFornecedor", null, htmlAttributes: new { @class = "form-control dropdown col-md-9" })
+                                    @Html.ValidationMessageFor(model => model.IdFornecedor, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.IdTipoDeConta, "Tipo", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.DropDownList("IdTipoDeConta", null, htmlAttributes: new { @class = "form-control dropdown col-md-9" })
+                                    @Html.ValidationMessageFor(model => model.IdTipoDeConta, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="@Url.Action("Index", "ContasAPagar")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Voltar</a>
+                                <button type="submit" value="Save" class="btn btn-raised btn-round btn-primary form">Salvar</button>
+                            </div>
+
+                        </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

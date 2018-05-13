@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinvet", "Clinvet\Clinvet.csproj", "{3799E28D-7561-4F41-96D7-DB19EF604578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinvet.Tests", "Clinvet.Tests\Clinvet.Tests.csproj", "{FEDD67E9-DC1A-402F-8A0E-BE3539962070}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3799E28D-7561-4F41-96D7-DB19EF604578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3799E28D-7561-4F41-96D7-DB19EF604578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3799E28D-7561-4F41-96D7-DB19EF604578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3799E28D-7561-4F41-96D7-DB19EF604578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDD67E9-DC1A-402F-8A0E-BE3539962070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDD67E9-DC1A-402F-8A0E-BE3539962070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDD67E9-DC1A-402F-8A0E-BE3539962070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDD67E9-DC1A-402F-8A0E-BE3539962070}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {525874CD-9A12-4D3C-812A-23B117926B11}
+	EndGlobalSection
+EndGlobal

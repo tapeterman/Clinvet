@@ -1,0 +1,123 @@
+﻿@model Clinvet.Models.Animal
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <section class="content">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-7">
+                    <h2>
+                        Cadastro de Pet
+                    </h2>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 text-right">
+                    <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                        <i class="zmdi zmdi-plus"></i>
+                    </button>
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Animal")">Meus Pets</a></li>
+                        <li class="breadcrumb-item active">Cadastro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong><i class="zmdi zmdi-face"></i> Cadastro de Pet </strong> </h2>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <ul class="header-dropdown">
+
+                                <li class="remove">
+                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Raca, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.EditorFor(model => model.Raca, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Raca, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.PesoOuPorte, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.EditorFor(model => model.PesoOuPorte, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.PesoOuPorte, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Especie, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.EditorFor(model => model.Especie, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Especie, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                    @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group form-inline">
+                                    @Html.LabelFor(model => model.IdCliente, "Responsável", htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.DropDownList("IdCliente", null, htmlAttributes: new { @class = "form-control dropdown col-md-9" })
+                                    @Html.ValidationMessageFor(model => model.IdCliente, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <a href="@Url.Action("Index", "Animal")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Voltar</a>
+                                <button type="submit" value="Save" class="btn btn-raised btn-round btn-primary form">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Clinvet.Models.Animal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="content profile-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    Pets Cadastrados
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item active">Pets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="card parents-list">
+                    <div class="header">
+                        <h2> Lista de Pets Cadastrados</h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a href="@Url.Action("Create", "Animal")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Cadastro de Pet</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayName("Responsável")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nome)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Raca)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PesoOuPorte)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DataNascimento)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Especie)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Sexo)
+                                    </th>
+                                    <th> Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model) {
+                                    <tr>
+                                        <td>
+                                            <strong class="col-purple">@Html.DisplayFor(modelItem => item.Cliente.Nome)</strong>
+</td>
+                                        <td>
+                                            <strong class="col-purple"> @Html.DisplayFor(modelItem => item.Nome)</strong>
+</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Raca)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PesoOuPorte)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DataNascimento)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Especie)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sexo)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Apagar", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

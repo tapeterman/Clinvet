@@ -1,0 +1,61 @@
+﻿@model Clinvet.Models.Tipo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    <i class="zmdi zmdi-assignment-check"></i> Detalhes da Tipos de Produtos ou Serviços
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Tipo")">Tipos de Produtos ou Serviços</a></li>
+                    <li class="breadcrumb-item active">Detalhes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row clearfix">
+            <div class="col-md-8 col-lg-6 col-lg-offset-4">
+                <div class="card ">
+                    <div class="body">
+                        <h6 class="col-purple"><i class="zmdi zmdi-assignment-account"></i> Detalhes do Tipos de Produtos ou Serviços: </h6>
+                        <div class="table-responsive">
+                            <table class="table m-t-20">
+                                <tbody>
+                                    <tr>
+                                        <td>@Html.DisplayNameFor(model => model.Descricao)</td>
+
+                                        <td>@Html.DisplayFor(model => model.Descricao)</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a href="@Url.Action("Index", "Tipo")" class="btn btn-block btn-raised btn-primary btn-default btn-round waves-effect" role="button">Voltar</a></td>
+                                        <td>
+                                            @using (Html.BeginForm()) {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            <input type="submit" value="Delete" class="btn btn-block btn-raised btn-primary btn-default btn-round waves-effect" />
+                                        </div>}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

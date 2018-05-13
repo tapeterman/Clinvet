@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Clinvet.Models.ProdutoServicoVendaServico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdutoServico.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendaServico.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadeProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorProduto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdutoServico.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendaServico.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantidadeProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorProduto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProdutoServicoVendaServico }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProdutoServicoVendaServico }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProdutoServicoVendaServico })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,139 @@
+﻿@model Clinvet.Models.Fornecedor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-7">
+                <h2>
+                    Cadastro de Fornecedor
+                </h2>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 text-right">
+                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="zmdi zmdi-home"></i> SysComPet</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Fornecedor")">Fornecedores</a></li>
+                    <li class="breadcrumb-item active">Cadastro</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong><i class="zmdi zmdi-face"></i> Cadastro de Fornecedor </strong> </h2>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    @using (Html.BeginForm()) {
+                        @Html.AntiForgeryToken()
+                    <div class="body">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Cnpj, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Rua, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Rua, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Rua, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <div class="form-group form-inline">
+                                @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control col-md-9" } })
+                                @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <a href="@Url.Action("Index", "Fornecedor")" class="btn btn-raised btn-primary btn-default btn-round waves-effect">Voltar</a>
+                            <button type="submit" value="Save" class="btn btn-raised btn-round btn-primary form">Salvar</button>
+                        </div>
+
+                    </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

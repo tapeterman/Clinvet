@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3799E28D-7561-4F41-96D7-DB19EF604578}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clinvet</RootNamespace>
+    <AssemblyName>Clinvet</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgendamentoConsultaController.cs" />
+    <Compile Include="Controllers\AnamneseController.cs" />
+    <Compile Include="Controllers\AnimalController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ContasAPagarController.cs" />
+    <Compile Include="Controllers\FichaAnimalController.cs" />
+    <Compile Include="Controllers\FormaDePagamentoController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
+    <Compile Include="Controllers\FornecedorProdutoServicoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProdutoServicoAgendamentoConsultaController.cs" />
+    <Compile Include="Controllers\ProdutoServicoController.cs" />
+    <Compile Include="Controllers\ProdutoServicoVendaServicoController.cs" />
+    <Compile Include="Controllers\TipoController.cs" />
+    <Compile Include="Controllers\TipoDeContaController.cs" />
+    <Compile Include="Controllers\TiposDeVacinaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VacinaController.cs" />
+    <Compile Include="Controllers\VendaServicoController.cs" />
+    <Compile Include="Controllers\VendaServicoFormaDePagamentoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgendamentoConsulta.cs" />
+    <Compile Include="Models\Anamnese.cs" />
+    <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClinvetContext.cs" />
+    <Compile Include="Models\ContasAPagar.cs" />
+    <Compile Include="Models\FichaAnimal.cs" />
+    <Compile Include="Models\FormaDePagamento.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
+    <Compile Include="Models\FornecedorProdutoServico.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\ProdutoServico.cs" />
+    <Compile Include="Models\ProdutoServicoAgendamentoConsultas.cs" />
+    <Compile Include="Models\ProdutoServicoVendaServico.cs" />
+    <Compile Include="Models\Tipo.cs" />
+    <Compile Include="Models\TiposDeVacina.cs" />
+    <Compile Include="Models\TipoDeConta.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Vacina.cs" />
+    <Compile Include="Models\VendaServico.cs" />
+    <Compile Include="Models\VendaServicoFormaDePagamento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bundles\datatablescripts.bundle.js" />
+    <Content Include="assets\bundles\footable.bundle.js" />
+    <Content Include="assets\bundles\fullcalendarscripts.bundle.js" />
+    <Content Include="assets\bundles\index.bundle.js" />
+    <Content Include="assets\bundles\jvectormap.bundle.js" />
+    <Content Include="assets\bundles\knob.bundle.js" />
+    <Content Include="assets\bundles\libscripts.bundle.js" />
+    <Content Include="assets\bundles\mainscripts.bundle.js" />
+    <Content Include="assets\bundles\morrisscripts.bundle.js" />
+    <Content Include="assets\bundles\vendorscripts.bundle.js" />
+    <Content Include="assets\css\authentication.css" />
+    <Content Include="assets\css\blog.css" />
+    <Content Include="assets\css\chatapp.css" />
+    <Content Include="assets\css\color_skins.css" />
+    <Content Include="assets\css\hm-style.css" />
+    <Content Include="assets\css\inbox.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\rtl.css" />
+    <Content Include="assets\css\timeline.css" />
+    <Content Include="assets\fonts\Material-Design-Iconic-Font_3972b7c.woff2.html" />
+    <Content Include="assets\images\blog\05-img.jpg" />
+    <Content Include="assets\images\blog\06-img.jpg" />
+    <Content Include="assets\images\blog\07-img.jpg" />
+    <Content Include="assets\images\blog\08-img.jpg" />
+    <Content Include="assets\images\blog\09-img.jpg" />
+    <Content Include="assets\images\blog\1.jpg" />
+    <Content Include="assets\images\blog\10-img.jpg" />
+    <Content Include="assets\images\blog\11-img.jpg" />
+    <Content Include="assets\images\blog\12-img.jpg" />
+    <Content Include="assets\images\blog\13-img.jpg" />
+    <Content Include="assets\images\blog\2.jpg" />
+    <Content Include="assets\images\blog\3.jpg" />
+    <Content Include="assets\images\blog\4.jpg" />
+    <Content Include="assets\images\blog\blog-page-1.jpg" />
+    <Content Include="assets\images\blog\blog-page-2.jpg" />
+    <Content Include="assets\images\blog\blog-page-3.jpg" />
+    <Content Include="assets\images\blog\blog-page-4.jpg" />
+    <Content Include="assets\images\Entrada.jpg" />
+    <Content Include="assets\images\left-bg.jpg" />
+    <Content Include="assets\images\image-gallery\1.jpg" />
+    <Content Include="assets\images\image-gallery\10.jpg" />
+    <Content Include="assets\images\image-gallery\11.jpg" />
+    <Content Include="assets\images\image-gallery\12.jpg" />
+    <Content Include="assets\images\image-gallery\13.jpg" />
+    <Content Include="assets\images\image-gallery\14.jpg" />
+    <Content Include="assets\images\image-gallery\15.jpg" />
+    <Content Include="assets\images\image-gallery\2.jpg" />
+    <Content Include="assets\images\image-gallery\3.jpg" />
+    <Content Include="assets\images\image-gallery\4.jpg" />
+    <Content Include="assets\images\image-gallery\5.jpg" />
+    <Content Include="assets\images\image-gallery\6.jpg" />
+    <Content Include="assets\images\image-gallery\7.jpg" />
+    <Content Include="assets\images\image-gallery\8.jpg" />
+    <Content Include="assets\images\image-gallery\9.jpg" />
+    <Content Include="assets\images\image1.jpg" />
+    <Content Include="assets\images\image2.jpg" />
+    <Content Include="assets\images\image3.jpg" />
+    <Content Include="assets\images\image4.jpg" />
+    <Content Include="assets\images\image5.jpg" />
+    <Content Include="assets\images\image6.jpg" />
+    <Content Include="assets\images\image7.jpg" />
+    <Content Include="assets\images\lg\avatar1.jpg" />
+    <Content Include="assets\images\lg\avatar2.jpg" />
+    <Content Include="assets\images\lg\avatar3.jpg" />
+    <Content Include="assets\images\lg\avatar4.jpg" />
+    <Content Include="assets\images\lg\avatar5.jpg" />
+    <Content Include="assets\images\lg\avatar6.jpg" />
+    <Content Include="assets\images\login.jpg" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\profile_av.jpg" />
+    <Content Include="assets\images\sm\avatar1.jpg" />
+    <Content Include="assets\images\sm\avatar2.jpg" />
+    <Content Include="assets\images\sm\avatar3.jpg" />
+    <Content Include="assets\images\sm\avatar4.jpg" />
+    <Content Include="assets\images\sm\avatar5.jpg" />
+    <Content Include="assets\images\sm\avatar6.jpg" />
+    <Content Include="assets\images\weather\cloudy.svg" />
+    <Content Include="assets\images\weather\rain.svg" />
+    <Content Include="assets\images\weather\sky.svg" />
+    <Content Include="assets\images\weather\summer.svg" />
+    <Content Include="assets\images\xs\avatar1.jpg" />
+    <Content Include="assets\images\xs\avatar10.jpg" />
+    <Content Include="assets\images\xs\avatar2.jpg" />
+    <Content Include="assets\images\xs\avatar3.jpg" />
+    <Content Include="assets\images\xs\avatar4.jpg" />
+    <Content Include="assets\images\xs\avatar5.jpg" />
+    <Content Include="assets\images\xs\avatar6.jpg" />
+    <Content Include="assets\images\xs\avatar7.jpg" />
+    <Content Include="assets\images\xs\avatar8.jpg" />
+    <Content Include="assets\images\xs\avatar9.jpg" />
+    <Content Include="assets\js\pages\blog\blog.js" />
+    <Content Include="assets\js\pages\calendar\calendar.js" />
+    <Content Include="assets\js\pages\cards\basic.js" />
+    <Content Include="assets\js\pages\charts\jquery-knob.js" />
+    <Content Include="assets\js\pages\charts\sparkline.js" />
+    <Content Include="assets\js\pages\file\filemanager.js" />
+    <Content Include="assets\js\pages\forms\basic-form-elements.js" />
+    <Content Include="assets\js\pages\forms\editors.js" />
+    <Content Include="assets\js\pages\index.js" />
+    <Content Include="assets\js\pages\index2.js" />
+    <Content Include="assets\js\pages\medias\image-gallery.js" />
+    <Content Include="assets\js\pages\rtl.js" />
+    <Content Include="assets\js\pages\student-profile.js" />
+    <Content Include="assets\js\pages\tables\footable.js" />
+    <Content Include="assets\js\pages\tables\jquery-datatable.js" />
+    <Content Include="assets\js\pages\ui\dialogs.js" />
+    <Content Include="assets\js\pages\ui\notifications.js" />
+    <Content Include="assets\js\pages\ui\range-sliders.js" />
+    <Content Include="assets\js\pages\ui\sortable-nestable.js" />
+    <Content Include="assets\js\pages\widgets\infobox\infobox-1.js" />
+    <Content Include="assets\plugins\autosize\autosize.js" />
+    <Content Include="assets\plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="assets\plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="assets\plugins\bootstrap-notify\bootstrap-notify.js" />
+    <Content Include="assets\plugins\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\plugins\chartjs\Chart.bundle.min.js" />
+    <Content Include="assets\plugins\ckeditor\ckeditor.js" />
+    <Content Include="assets\plugins\ckeditor\config.js" />
+    <Content Include="assets\plugins\ckeditor\contents.css" />
+    <Content Include="assets\plugins\ckeditor\styles.js" />
+    <Content Include="assets\plugins\dropzone\dropzone.css" />
+    <Content Include="assets\plugins\dropzone\dropzone.js" />
+    <Content Include="assets\plugins\footable-bootstrap\css\footable.bootstrap.min.css" />
+    <Content Include="assets\plugins\footable-bootstrap\css\footable.standalone.min.css" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="assets\plugins\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="assets\plugins\ion-rangeslider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="assets\plugins\ion-rangeslider\img\sprite-skin-flat.png" />
+    <Content Include="assets\plugins\ion-rangeslider\js\ion.rangeSlider.js" />
+    <Content Include="assets\plugins\jquery-datatable\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\plugins\jvectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="assets\plugins\jvectormap\jquery-jvectormap-2.0.3.min.css" />
+    <Content Include="assets\plugins\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="assets\plugins\light-gallery\css\lightgallery.css" />
+    <Content Include="assets\plugins\light-gallery\fonts\lg_97c12e19.svg" />
+    <Content Include="assets\plugins\light-gallery\img\loading.gif" />
+    <Content Include="assets\plugins\light-gallery\img\video-play.png" />
+    <Content Include="assets\plugins\light-gallery\img\vimeo-play.png" />
+    <Content Include="assets\plugins\light-gallery\img\youtube-play.png" />
+    <Content Include="assets\plugins\light-gallery\js\lightgallery-all.min.js" />
+    <Content Include="assets\plugins\momentjs\moment.js" />
+    <Content Include="assets\plugins\morrisjs\morris.css" />
+    <Content Include="assets\plugins\morrisjs\morris.min.css" />
+    <Content Include="assets\plugins\nestable\jquery-nestable.css" />
+    <Content Include="assets\plugins\nestable\jquery.nestable.js" />
+    <Content Include="assets\plugins\sweetalert\sweetalert.css" />
+    <Content Include="assets\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="assets\plugins\waitme\waitMe.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Material-Design-Iconic-Font_3972b7c.woff2.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\Material-Design-Iconic-Font_3972b7c.ttf" />
+    <Content Include="fonts\Material-Design-Iconic-Font_3972b7c.woff" />
+    <Content Include="assets\fonts\Material-Design-Iconic-Font_3972b7c.ttf" />
+    <Content Include="assets\fonts\Material-Design-Iconic-Font_3972b7c.woff" />
+    <Content Include="assets\plugins\light-gallery\fonts\lg_2d2816fe.eot" />
+    <Content Include="assets\plugins\light-gallery\fonts\lg_97c12e19.eot" />
+    <Content Include="assets\plugins\light-gallery\fonts\lg_97c12e19.ttf" />
+    <Content Include="assets\plugins\light-gallery\fonts\lg_97c12e19.woff" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Create.cshtml" />
+    <Content Include="Views\Funcionario\Delete.cshtml" />
+    <Content Include="Views\Funcionario\Details.cshtml" />
+    <Content Include="Views\Funcionario\Edit.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\TiposDeVacina\Create.cshtml" />
+    <Content Include="Views\TiposDeVacina\Delete.cshtml" />
+    <Content Include="Views\TiposDeVacina\Details.cshtml" />
+    <Content Include="Views\TiposDeVacina\Edit.cshtml" />
+    <Content Include="Views\TiposDeVacina\Index.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Create.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Delete.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Details.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Edit.cshtml" />
+    <Content Include="Views\AgendamentoConsulta\Index.cshtml" />
+    <Content Include="Views\Anamnese\Create.cshtml" />
+    <Content Include="Views\Anamnese\Delete.cshtml" />
+    <Content Include="Views\Anamnese\Details.cshtml" />
+    <Content Include="Views\Anamnese\Edit.cshtml" />
+    <Content Include="Views\Anamnese\Index.cshtml" />
+    <Content Include="Views\Animal\Create.cshtml" />
+    <Content Include="Views\Animal\Delete.cshtml" />
+    <Content Include="Views\Animal\Details.cshtml" />
+    <Content Include="Views\Animal\Edit.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\ContasAPagar\Create.cshtml" />
+    <Content Include="Views\ContasAPagar\Delete.cshtml" />
+    <Content Include="Views\ContasAPagar\Details.cshtml" />
+    <Content Include="Views\ContasAPagar\Edit.cshtml" />
+    <Content Include="Views\ContasAPagar\Index.cshtml" />
+    <Content Include="Views\FichaAnimal\Create.cshtml" />
+    <Content Include="Views\FichaAnimal\Delete.cshtml" />
+    <Content Include="Views\FichaAnimal\Details.cshtml" />
+    <Content Include="Views\FichaAnimal\Edit.cshtml" />
+    <Content Include="Views\FichaAnimal\Index.cshtml" />
+    <Content Include="Views\FormaDePagamento\Create.cshtml" />
+    <Content Include="Views\FormaDePagamento\Delete.cshtml" />
+    <Content Include="Views\FormaDePagamento\Details.cshtml" />
+    <Content Include="Views\FormaDePagamento\Edit.cshtml" />
+    <Content Include="Views\FormaDePagamento\Index.cshtml" />
+    <Content Include="Views\Fornecedor\Create.cshtml" />
+    <Content Include="Views\Fornecedor\Delete.cshtml" />
+    <Content Include="Views\Fornecedor\Details.cshtml" />
+    <Content Include="Views\Fornecedor\Edit.cshtml" />
+    <Content Include="Views\Fornecedor\Index.cshtml" />
+    <Content Include="Views\ProdutoServico\Create.cshtml" />
+    <Content Include="Views\ProdutoServico\Delete.cshtml" />
+    <Content Include="Views\ProdutoServico\Details.cshtml" />
+    <Content Include="Views\ProdutoServico\Edit.cshtml" />
+    <Content Include="Views\ProdutoServico\Index.cshtml" />
+    <Content Include="Views\Tipo\Create.cshtml" />
+    <Content Include="Views\Tipo\Delete.cshtml" />
+    <Content Include="Views\Tipo\Details.cshtml" />
+    <Content Include="Views\Tipo\Edit.cshtml" />
+    <Content Include="Views\Tipo\Index.cshtml" />
+    <Content Include="Views\TipoDeConta\Create.cshtml" />
+    <Content Include="Views\TipoDeConta\Delete.cshtml" />
+    <Content Include="Views\TipoDeConta\Details.cshtml" />
+    <Content Include="Views\TipoDeConta\Edit.cshtml" />
+    <Content Include="Views\TipoDeConta\Index.cshtml" />
+    <Content Include="Views\Vacina\Create.cshtml" />
+    <Content Include="Views\Vacina\Delete.cshtml" />
+    <Content Include="Views\Vacina\Details.cshtml" />
+    <Content Include="Views\Vacina\Edit.cshtml" />
+    <Content Include="Views\Vacina\Index.cshtml" />
+    <Content Include="Views\VendaServico\Create.cshtml" />
+    <Content Include="Views\VendaServico\Delete.cshtml" />
+    <Content Include="Views\VendaServico\Details.cshtml" />
+    <Content Include="Views\VendaServico\Edit.cshtml" />
+    <Content Include="Views\VendaServico\Index.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Create.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Delete.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Details.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Edit.cshtml" />
+    <Content Include="Views\FornecedorProdutoServico\Index.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Create.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Delete.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Details.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Edit.cshtml" />
+    <Content Include="Views\ProdutoServicoAgendamentoConsulta\Index.cshtml" />
+    <Content Include="Views\ProdutoServicoVendaServico\Create.cshtml" />
+    <Content Include="Views\ProdutoServicoVendaServico\Delete.cshtml" />
+    <Content Include="Views\ProdutoServicoVendaServico\Details.cshtml" />
+    <Content Include="Views\ProdutoServicoVendaServico\Edit.cshtml" />
+    <Content Include="Views\ProdutoServicoVendaServico\Index.cshtml" />
+    <Content Include="Views\VendaServicoFormaDePagamento\Create.cshtml" />
+    <Content Include="Views\VendaServicoFormaDePagamento\Delete.cshtml" />
+    <Content Include="Views\VendaServicoFormaDePagamento\Details.cshtml" />
+    <Content Include="Views\VendaServicoFormaDePagamento\Edit.cshtml" />
+    <Content Include="Views\VendaServicoFormaDePagamento\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58416</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58416/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
